@@ -39,8 +39,14 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.75);
+  transform: scale(1.2);
   will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .flowers {
+    transform: scale(1.5);
+  }
 }
 
 .flower {
