@@ -1482,6 +1482,60 @@ body {
   .message-text {
     font-size: 1.1em;
   }
+
+  /* Ajustes responsive adicionales para la página de flores */
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+
+  /* Botón fijo y accesible en móviles (usa safe-area para iPhone) */
+  #showMessageBtn {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: calc(env(safe-area-inset-bottom, 20px) + 24px) !important;
+    z-index: 1100 !important;
+    padding: clamp(10px, 3.5vw, 18px) 30px !important;
+    font-size: clamp(15px, 3.6vw, 18px) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
+    background: rgba(255,255,255,0.12) !important;
+    color: rgba(255,255,255,0.95) !important;
+  }
+
+  /* Contenedor del mensaje más alto y con ancho adaptativo */
+  #messageContainer {
+    top: clamp(6%, 8vh, 12%) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: min(90%, 520px) !important;
+    padding: 20px !important;
+    font-size: 16px !important;
+  }
+
+  /* Escalado de las flores para distintos anchos */
+  .flowers {
+    transform: scale(1.6) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .flowers {
+    transform: scale(1.8) !important;
+  }
+
+  #messageContainer { width: 92% !important; padding: 16px !important; }
+  #showMessageBtn { bottom: calc(env(safe-area-inset-bottom, 20px) + 30px) !important; }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .flowers { transform: scale(1.3) !important; }
+}
+
+@media (min-width: 1200px) {
+  .flowers { transform: scale(1.2) !important; }
+}
   
   .message-signature {
     font-size: 1.3em;
